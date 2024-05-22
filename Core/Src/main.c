@@ -161,6 +161,7 @@ int main(void)
 
 	  if (Wait_for("GGA") == 1)
 	  {
+ // no hope
 
 		  //VCCTimeout = 5000;  // Reset the VCC Timeout indicating the GGA is being received
 
