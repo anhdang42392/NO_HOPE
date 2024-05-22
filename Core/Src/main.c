@@ -161,9 +161,9 @@ int main(void)
 
 	  if (Wait_for("GGA") == 1)
 	  {
- // no hope
+ // no hope ff
 
-		  //VCCTimeout = 5000;  // Reset the VCC Timeout indicating the GGA is being received
+		  //VCCTimeout = 5000;  //
 
 		  Copy_upto("*", GGA);
 		  decodeGGA(GGA, &gpsData.ggastruct);
