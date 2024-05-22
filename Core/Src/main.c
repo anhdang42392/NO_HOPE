@@ -161,7 +161,7 @@ int main(void)
 
 	  if (Wait_for("GGA") == 1)
 	  {
- // no hope ff
+
 
 		  //VCCTimeout = 5000;  //
 

@@ -120,7 +120,7 @@ int decodeGGA (char *GGAbuffer, GGASTRUCT *gga)
 	int declen = (strlen(buffer))-j;  // calculate the number of digit after decimal
 	int dec = atoi ((char *) buffer+j);  // conver the decimal part a a separate number
 	float lat = (num/100.0) + (dec/pow(10, (declen+2)));  // 1234.56789 = 12.3456789
-	gga->lcation.latitude = lat/60.0;  // save the lattitude data into the strucure
+	gga->lcation.latitude = (int)lat + ((lat - (int)lat)*100)/60;  // save the lattitude data into the strucure
 	inx++;
 	gga->lcation.NS = GGAbuffer[inx];  // save the N/S into the structure
 
@@ -143,7 +143,7 @@ int decodeGGA (char *GGAbuffer, GGASTRUCT *gga)
 	declen = (strlen(buffer))-j;  // calculate the number of digit after decimal
 	dec = atoi ((char *) buffer+j);  // conver the decimal part a a separate number
 	lat = (num/100.0) + (dec/pow(10, (declen+2)));  // 1234.56789 = 12.3456789
-	gga->lcation.longitude = lat/60.0;  // save the longitude data into the strucure
+	gga->lcation.longitude = (int)lat + ((lat - (int)lat)*100)/60;  // save the longitude data into the strucure
 	inx++;
 	gga->lcation.EW = GGAbuffer[inx];  // save the E/W into the structure
 
