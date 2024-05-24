@@ -152,7 +152,7 @@ int decodeGGA (char *GGAbuffer, GGASTRUCT *gga)
 		inx++;   // ',' after E/W
 		memset(buffer, '\0', 12);
 		i=0;
-		while (GGAbuffer[inx] != ',')  // copy upto the we reach the after time ','
+		while (GGAbuffer[inx] != ',')
 		{
 			buffer[i] = GGAbuffer[inx];
 			i++;
@@ -167,11 +167,11 @@ int decodeGGA (char *GGAbuffer, GGASTRUCT *gga)
 
    // ',' after position fix;
 
-	// number of gga->numofggagps->numofsattelites
-	inx++;  // Reach the first number in the gga->numofggagps->numofsatellites
+
+	inx++;
 	memset(buffer, '\0', 12);
 	i=0;
-	while (GGAbuffer[inx] != ',')  // copy upto the ',' after number of gga->numofggagps->numofsatellites
+	while (GGAbuffer[inx] != ',')
 	{
 		buffer[i] = GGAbuffer[inx];
 		i++;
